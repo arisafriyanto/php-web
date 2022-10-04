@@ -1,0 +1,10 @@
+
+/*
+    file yng diupload ke server, kita bisa tangkap dengan $_FILES
+    setiap ada upload file, otomatis $_FILES akan menangkap informasi dari file yg diupload
+    saat diupload ke server file otomatis akan disimpan di temporary folder di server mirip kaya nyimpen session, dari situ kita bisa pindahkan ke lokasi yg kita mau.
+
+    nah temporary folder untuk nyimpen file yang sudah kita upload jika filenya tidak digunakan maka otomatis akan dihapus dari temporary foldernya supaya tidak ada file yang numpuk dan juga kita bisa pindahkan filenya dari temprary folder ke folder yang kita mau
+
+    jadi isi dari $_FILES adalah infomasi dari file yang diupload ada 5 dan untuk letak temporary folder dan size max bisa dilihat di phpinfo dan size max bisa kita ubah di php.ini
+*/

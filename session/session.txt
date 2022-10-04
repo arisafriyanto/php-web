@@ -1,0 +1,20 @@
+<?php 
+
+/*
+    Session ini mekanisme untuk mengingat interaksi sebelumnya dari client
+
+    HTTP tidak mengenal session, karena http itu didesain stateless (tidak menyimpan state, data atau informasi apapun), artinya request nya independent dan dari request 1, 2, 3 itu sebenernya tidak tahu dan bodo amat, tidak bergantung pada request lainnya dan tidak tahu request sebelumnya dan sesudahnya.
+    Karena http ini stateless dia itu bebas akses website dari mana saja tidak harus urut, contoh ketika kita ke facebook kita bebas mau ke chat, profile dll tanpa harus urut gthu, 
+    
+    nah untuk login itu menggunakan mekanisme yang namanya HTTP COOKIE dia akan memaksa informasi atau data nya disimpan di browser, sehingga dia akan membawa cookie login kita. ketika kita sudah di dalam facebook, server akan mengecek cookie nya ada tidak, dan dia juga sifatnya stateless.
+
+    apa sih manfaat stateless itu di http? manfaatnya ketika trafic website kita terlalu tinggi gthu (banyak dikunjungi orang) kita bisa dengan mudah membuat server lagi jadi nanti ada server 1, 2, 3 gthu supaya website kita tetap cepat diakses dan tidak ada keharusan buat akses request ini dlu baru kesini jadi kita akses websitenya bebas dan kecepatan terjaga.
+
+
+    Session ini adalah dimana kita bisa menyimpan informasi client di server, artinya servernya menyimpan state/data sehingga jika ada request dari client yang sama, kita bisa tahu dari server.
+    contoh
+    jika saya request pertama itu ada maka kita akan buat session request pertama dan dikasih tau ke cliennya nah nanti jika ada request kedua datang dia sudah tau ada session dan ketahuan request ini punya saya.
+
+    contoh session
+    Biasanya session ini digunakan untuk login, jadi ketika kita login sukses kita membuat session disimpan didalam browser, dan request selanjutnya dari client membawa session + requestnya ini sehingga disisi server sudah ada dan jika kita mau akses profile itu kan diharapkan login dlu, berhubung kita membawa session login kita bisa langsung akses profile tanpa login karena browser kita membawa sessionnya dan server sudah tau informasi login dibawa oleh session.
+*/

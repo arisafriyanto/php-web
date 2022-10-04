@@ -1,0 +1,13 @@
+Di PHP kita biasanya ingin mendownload file diharuskan login dlu baru bisa download file walaupun kita bisa akses file dari url tapi kita butuh login nah ini akan diatur di PHP
+
+Memaksa client utk download file, sebenanya sudah ada di standar HTTP header, ia menggunakan 
+Content-Disposition
+
+nah dia punya default
+Content-Disposition: inline => artinya dia bakal dirender dulu filenya
+Content-Disposition: attachment => artinya dia akan memaksa download apapun filenya 
+Content-Disposition: attachment; filename="nama.jpg"; beserta nama filenya
+
+Jadi di PHP kita cukup gunakan header itu dan akan memaksa browser untuk mendownload file yang sudah kita buat dengan PHP
+
+Untuk membaca file dan meloadnya di php kita bisa gunakan function readfile(filename)

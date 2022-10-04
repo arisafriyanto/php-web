@@ -1,0 +1,44 @@
+Cookie adalah bentuk key-value yang di kirim oleh server pada HTTP RESPONSE utk disimpan diclient (web browser)
+
+ketika web browser menerima Cookie maka secara otomatis request selanjutnya yang dikirim akan membawa Cookie + HTTP REQUEST yang dilakukan ke server 
+
+Utk buat Cookie di php kita gunakan function setcookie()
+Cookie ada di HTTP header jadi buat cookie dlu baru content
+
+Description
+
+setcookie(
+    string $name,
+    string $value = "",
+    int $expires = 0,
+    string $path = "",
+    string $domain = "",
+    bool $secure = false,
+    bool $httponly = false
+): bool
+
+di php kita tidak perlu membuat header HTTP cookie.
+
+jadi ketika ingin buat cookie kita gunakan function setcookie()
+parameter di cookie :
+
+string $name    = nama cookie,
+string $value   = isi dari cookie,
+int $expires    = expired, kadaluarsa cookie ini sampe kapan, batas waktu cookie ini ada, 
+                  default kosong berarti jika browser di close cookie akan langsung expired
+string $path    = ini kita bisa set contohnya path  /manual, jika kita set itu maka cookie ini hanya akan
+                  jalan jika kita ada di path /manual dan belakangnya bebas, jika tidak diset maka cookie akan jalan dimana pun pathnya,
+string $domain  = ini bisa kita set ke domain yg kita punya, jika tidak diset maka akan default domain kita 
+                  saat ini,
+bool $secure    = ini defaultnya false dia bisa jalan di http jika kita ganti true maka dia hanya bisa 
+                  jalan di https,
+bool $httponly  = ini defaultnya false berarti dia bisa dibaca javascript, jika kita set true maka tidak 
+                  bisa dibaca javascript, disarankan cookie true supaya tidak bisa dibaca javascript, jadi misalkan ada problem cros site scripting (xss) cookie ini tidak bisa dicuri.
+
+
+cara menggunakan cookie yg dikirim client, kita gunakan global variable $_COOKIE 
+
+
+Alternative signature available as of PHP 7.3.0:
+
+setcookie(string $name, string $value = "", array $options = []): bool
